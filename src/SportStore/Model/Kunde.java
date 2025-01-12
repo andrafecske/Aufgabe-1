@@ -3,11 +3,12 @@ package SportStore.Model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Kunde {
+public class Kunde implements HasID {
     private int id;
     private String name;
     private String adresse;
     private List<Produkt> produktList;
+
 
     public Kunde(int id, String name, String adresse) {
         this.id = id;
@@ -16,7 +17,7 @@ public class Kunde {
         produktList = new ArrayList<Produkt>();
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -46,5 +47,14 @@ public class Kunde {
 
     public void setProduktList(List<Produkt> produktList) {
         this.produktList = produktList;
+    }
+
+    @Override
+    public String toString() {
+        return "Kunde" +
+                "name='" + name + '\'' +
+                ", ID=" + id +
+                ", produktList=" + produktList +
+                ", adresse='" + adresse +  '\'';
     }
 }
